@@ -11,8 +11,11 @@ import {
   selectError,
   selectFilter,
   selectLoading,
-} from 'redux/selectors';
-import { deleteContactThunk, getContactsThunk } from 'redux/operations';
+} from 'redux/contacts/selectors';
+import {
+  deleteContactThunk,
+  getContactsThunk,
+} from 'redux/contacts/operations';
 
 export const ContactList = () => {
   const contacts = useSelector(selectContacts);
