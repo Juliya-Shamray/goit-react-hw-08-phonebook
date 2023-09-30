@@ -3,8 +3,8 @@ const { createGlobalStyle } = require('styled-components');
 export const GlobalStyle = createGlobalStyle`
   body {
    font-family: sans-serif;
-   width: 1200px;
-   margin: 50px auto;
+   /* width: 1200px; */
+   margin: 0 auto;
    
 h1,
 h2,

@@ -6,26 +6,26 @@ export const StyledLi = styled.li`
   display: flex;
   align-items: center;
   box-shadow: 7px 1px 4px black;
-  width: 500px;
+  max-width: 500px;
   gap: 20px;
   padding: 10px;
   justify-content: space-between;
   border: 1px solid black;
   margin-bottom: 15px;
   border-radius: 5px;
+  background-color: white;
 `;
 export const StyledBtn = styled.button`
   padding: 5px 10px;
   border: none;
   cursor: pointer;
-  background-color: lightseagreen;
+  background-color: #d36e7d;
   border-radius: 5px;
   text-transform: uppercase;
   transition: all 250ms linear;
   &:hover,
   &:focus {
-    transform: scale(1.1);
-    font-weight: 700;
+    background-color: #cf5568;
   }
 `;
 export const StyledText = styled.p`

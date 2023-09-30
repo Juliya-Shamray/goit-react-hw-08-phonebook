@@ -1,7 +1,5 @@
-// https://connections-api.herokuapp.com/
-
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const authAPI = axios.create({
   baseURL: 'https://connections-api.herokuapp.com/',
@@ -10,6 +8,7 @@ export const authAPI = axios.create({
 export const setToken = token => {
   authAPI.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
+
 export const clearToken = () => {
   authAPI.defaults.headers.common.Authorization = '';
 };
@@ -26,6 +25,7 @@ export const registerThunk = createAsyncThunk(
     }
   }
 );
+
 export const loginThunk = createAsyncThunk(
   'login',
   async (credential, thunkAPI) => {
@@ -48,14 +48,17 @@ export const logoutThunk = createAsyncThunk('logout', async (_, thunkAPI) => {
   }
 });
 
-export const refreshThunk = createAsyncThunk(
-  'refresh',
-  async (credential, thunkAPI) => {
-    try {
-      const { data } = await authAPI.get('users/current', credential);
-      return data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
+export const refreshThunk = createAsyncThunk('refresh', async (_, thunkAPI) => {
+  const savedToken = thunkAPI.getState().auth.token;
+
+  if (!savedToken) return thunkAPI.rejectWithValue('You need login!!!');
+
+  try {
+    setToken(savedToken);
+    const { data } = await authAPI.get('users/current');
+    console.log(data);
+    return data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.message);
   }
-);
+});

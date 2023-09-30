@@ -1,9 +1,14 @@
 import { styled } from 'styled-components';
 export const StyledForm = styled.form`
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   gap: 15px;
   margin: 20px 0;
+  background-color: lightgray;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 0 black;
+  width: 350px;
 `;
 export const StyledLabel = styled.label`
   font-weight: 700;
@@ -19,18 +24,19 @@ export const StyledInput = styled.input`
 `;
 export const StyledBtn = styled.button`
   width: max-content;
+  margin-left: auto;
   padding: 5px 10px;
-  border: 2px solid lightpink;
+  border: 2px solid #5e815e;
   cursor: pointer;
   background-color: white;
-  color: lightpink;
+  color: #5e815e;
   border-radius: 5px;
   text-transform: uppercase;
   transition: all 250ms linear;
   font-weight: bold;
   &:hover,
   &:focus {
-    background-color: lightpink;
+    background-color: #5e815e;
     color: white;
   }
 `;

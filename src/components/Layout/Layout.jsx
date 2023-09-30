@@ -1,13 +1,14 @@
 import { Outlet } from 'react-router-dom';
-import { Header } from './Header';
+import { Header } from '../Header/Header';
+import { StyledMain } from './Layout.styled';
 
 export const Layout = () => {
   return (
     <>
       <Header />
-      <main>
+      <StyledMain>
         <Outlet />
-      </main>
+      </StyledMain>
     </>
   );
 };
