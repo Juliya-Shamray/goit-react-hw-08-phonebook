@@ -9,7 +9,7 @@ import { selectIsRefresh } from 'redux/auth/selectors';
 import { useEffect } from 'react';
 import { refreshThunk } from 'redux/auth/operations';
 import { PrivateRoutes } from './PrivateRoutes/PrivateRoutes';
-import { PageNotFound } from 'pages/PageNotFound';
+import { PageNotFound } from 'pages/PageNotFound/PageNotFound';
 
 export const App = () => {
   const isRefresh = useSelector(selectIsRefresh);

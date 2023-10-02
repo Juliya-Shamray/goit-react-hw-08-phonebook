@@ -44,7 +44,7 @@ export const ContactList = () => {
       {filteredData.map(contact => (
         <StyledLi key={contact.id}>
           <StyledText>
-            {contact.name}: {contact.phone}
+            {contact.name}: {contact.number}
           </StyledText>
           <StyledBtn onClick={() => dispatch(deleteContactThunk(contact.id))}>
             Delete

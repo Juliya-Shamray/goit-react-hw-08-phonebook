@@ -4,7 +4,6 @@ import {
   deleteContactThunk,
   getContactsThunk,
 } from './operations';
-import { logoutThunk } from 'redux/auth/operations';
 
 const initialState = {
   contacts: {
@@ -34,9 +33,6 @@ export const contactsSlice = createSlice({
         state.contacts.items = state.contacts.items.filter(
           item => item.id !== payload
         );
-      })
-      .addCase(logoutThunk.fulfilled, state => {
-        state.contacts.items = [];
       })
       .addMatcher(
         isAnyOf(

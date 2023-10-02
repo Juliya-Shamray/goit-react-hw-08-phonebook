@@ -17,7 +17,9 @@ export const Header = () => {
             <StyledLink to="/contacts">Contacts</StyledLink>
           </li>
         </ul>
-        {!isLogin && (
+        {isLogin ? (
+          <UserMenu />
+        ) : (
           <ul>
             <li>
               <StyledLink to="/register">Register</StyledLink>
@@ -27,8 +29,6 @@ export const Header = () => {
             </li>
           </ul>
         )}
-
-        {isLogin && <UserMenu />}
       </nav>
     </StyledHeader>
   );
