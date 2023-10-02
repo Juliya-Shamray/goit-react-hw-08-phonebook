@@ -8,7 +8,7 @@ export const StyledForm = styled.form`
   padding: 20px;
   border-radius: 10px;
   box-shadow: 1px 1px 10px 0 black;
-  width: 350px;
+  max-width: 350px;
 `;
 export const StyledLabel = styled.label`
   font-weight: 700;
@@ -19,8 +19,13 @@ export const StyledLabel = styled.label`
 
 export const StyledInput = styled.input`
   margin-left: 20px;
-  padding: 5px 10px;
   border-radius: 5px;
+  padding: 5px 5px;
+  font-size: 80%;
+  @media screen and (min-width: 768px) {
+    padding: 5px 10px;
+    font-size: 100%;
+  }
 `;
 export const StyledBtn = styled.button`
   width: max-content;

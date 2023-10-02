@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 export const StyledHeader = styled.header`
   background-color: #444c5c;
-  padding: 15px 50px;
+  padding: 15px 0;
   font-size: 18px;
   nav {
     display: flex;

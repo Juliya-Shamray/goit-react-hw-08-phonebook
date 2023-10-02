@@ -24,4 +24,23 @@ img {
   max-width: 100%;
   height: auto;
 }
-  }`;
+  }
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (min-width:320px) {
+        max-width: 428px;
+}
+    @media screen and (min-width:768px) {
+        max-width: 768px;
+}
+
+    @media screen and (min-width:1158px) {
+        max-width: 1158px;
+    
+}
+
+
+}`;

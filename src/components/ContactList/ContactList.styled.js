@@ -7,6 +7,9 @@ export const StyledLi = styled.li`
   align-items: center;
   box-shadow: 7px 1px 4px black;
   max-width: 500px;
+  @media screen and (min-width: 768px) {
+    width: 500px;
+  }
   gap: 20px;
   padding: 10px;
   justify-content: space-between;

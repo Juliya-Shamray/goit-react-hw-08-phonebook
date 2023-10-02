@@ -7,29 +7,31 @@ export const Header = () => {
 
   return (
     <StyledHeader>
-      <nav>
-        <ul>
-          <li>
-            <StyledLink to="/">Home</StyledLink>
-          </li>
-
-          <li>
-            <StyledLink to="/contacts">Contacts</StyledLink>
-          </li>
-        </ul>
-        {isLogin ? (
-          <UserMenu />
-        ) : (
+      <div className="container">
+        <nav>
           <ul>
             <li>
-              <StyledLink to="/register">Register</StyledLink>
+              <StyledLink to="/">Home</StyledLink>
             </li>
+
             <li>
-              <StyledLink to="/login">Login</StyledLink>
+              <StyledLink to="/contacts">Contacts</StyledLink>
             </li>
           </ul>
-        )}
-      </nav>
+          {isLogin ? (
+            <UserMenu />
+          ) : (
+            <ul>
+              <li>
+                <StyledLink to="/register">Register</StyledLink>
+              </li>
+              <li>
+                <StyledLink to="/login">Login</StyledLink>
+              </li>
+            </ul>
+          )}
+        </nav>
+      </div>
     </StyledHeader>
   );
 };

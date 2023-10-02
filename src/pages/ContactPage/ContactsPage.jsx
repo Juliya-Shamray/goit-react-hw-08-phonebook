@@ -1,15 +1,20 @@
 import { ContactForm } from 'components/ContactForm/ContactForm';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Filter } from 'components/Filter/Filter';
+import { StyledDiv } from './ContactPage.styled';
 
 export const ContactsPage = () => {
   return (
-    <div>
+    <StyledDiv>
       <h1>Phone book</h1>
-      <ContactForm />
+      <div>
+        <ContactForm />
+      </div>
       <h2>Contacts</h2>
       <Filter />
-      <ContactList />
-    </div>
+      <div>
+        <ContactList />
+      </div>
+    </StyledDiv>
   );
 };
