@@ -1,17 +1,21 @@
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { registerThunk } from 'redux/auth/operations';
 import { StyledDiv, StyledForm } from './RegisterForm.styled';
+import { toast } from 'react-toastify';
 export const RegisterForm = () => {
   const { register, handleSubmit } = useForm();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const submit = data => {
     dispatch(registerThunk(data))
       .unwrap()
-      .then(res => {
-        console.log(res);
-      });
+      .then(() => {
+        toast.success(`Congratulations!!! You have successfully registered`);
+        navigate('/contacts');
+      })
+      .catch(() => toast.error('Data is not valid'));
   };
   return (
     <StyledDiv>

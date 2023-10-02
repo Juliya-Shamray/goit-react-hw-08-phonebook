@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 export const StyledHeader = styled.header`
   background-color: #444c5c;
-  padding: 15px;
+  padding: 15px 50px;
   font-size: 18px;
   nav {
     display: flex;
@@ -13,6 +13,11 @@ export const StyledHeader = styled.header`
     list-style: none;
     gap: 10px;
     align-items: center;
+  }
+  li {
+    &:nth-child(3) {
+      justify-content: flex-end;
+    }
   }
 `;
 export const StyledLink = styled(NavLink)`

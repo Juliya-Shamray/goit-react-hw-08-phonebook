@@ -2,12 +2,15 @@
 //   "email": "across@mail.com",
 //   "password": "examplepwd12345"
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { loginThunk } from 'redux/auth/operations';
 import { StyledDiv, StyledForm } from './RegisterForm/RegisterForm.styled';
+import { toast } from 'react-toastify';
+import { selectIsLogin } from 'redux/auth/selectors';
 export const LoginForm = () => {
   const { register, handleSubmit } = useForm();
+  const isLogin = useSelector(selectIsLogin);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -15,10 +18,11 @@ export const LoginForm = () => {
     dispatch(loginThunk(data))
       .unwrap()
       .then(res => {
-        console.log(res);
+        toast.success(`Welcome, ${res.user.name}!!!`);
         navigate(location.state?.from ?? '/');
       });
   };
+  if (isLogin) return <Navigate to="/contacts" />;
   return (
     <StyledDiv>
       <StyledForm onSubmit={handleSubmit(submit)}>

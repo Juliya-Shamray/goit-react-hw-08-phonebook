@@ -12,7 +12,7 @@ import { selectContacts } from 'redux/contacts/selectors';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
+  const [number, setNumber] = useState('');
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
@@ -20,11 +20,11 @@ export const ContactForm = () => {
     e.preventDefault();
     const findByName = contacts.find(contact => contact.name === name);
     if (!findByName) {
-      dispatch(addContactThunk({ name, phone }));
+      dispatch(addContactThunk({ name, number }));
     } else toast.info(`${findByName.name} is already in contacts`);
 
     setName('');
-    setPhone('');
+    setNumber('');
   };
 
   return (
@@ -49,9 +49,9 @@ export const ContactForm = () => {
           pattern="[0-9+\s]*"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
-          value={phone}
+          value={number}
           onChange={e => {
-            setPhone(e.target.value);
+            setNumber(e.target.value);
           }}
         />
       </StyledLabel>

@@ -16,18 +16,19 @@ export const Header = () => {
           <li>
             <StyledLink to="/contacts">Contacts</StyledLink>
           </li>
-          {!isLogin && (
-            <>
-              <li>
-                <StyledLink to="/register">Register</StyledLink>
-              </li>
-              <li>
-                <StyledLink to="/login">Login</StyledLink>
-              </li>
-            </>
-          )}
         </ul>
-        <UserMenu />
+        {!isLogin && (
+          <ul>
+            <li>
+              <StyledLink to="/register">Register</StyledLink>
+            </li>
+            <li>
+              <StyledLink to="/login">Login</StyledLink>
+            </li>
+          </ul>
+        )}
+
+        {isLogin && <UserMenu />}
       </nav>
     </StyledHeader>
   );
