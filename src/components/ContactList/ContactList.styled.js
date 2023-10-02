@@ -19,15 +19,25 @@ export const StyledBtn = styled.button`
   padding: 5px 10px;
   border: none;
   cursor: pointer;
-  background-color: #d36e7d;
-  border-radius: 5px;
-  text-transform: uppercase;
+  background-color: transparent;
   transition: all 250ms linear;
   &:hover,
   &:focus {
-    background-color: #cf5568;
+    color: #cf5568;
   }
 `;
 export const StyledText = styled.p`
   font-size: 20px;
+`;
+
+export const StyledBtnEdit = styled.button`
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 250ms linear;
+  &:hover,
+  &:focus {
+    color: darkblue;
+  }
 `;

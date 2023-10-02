@@ -18,7 +18,6 @@ export const addContactThunk = createAsyncThunk(
   async (data, thunkAPI) => {
     try {
       const response = await instance.post('contacts', data);
-      console.log(response.data);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -32,6 +31,19 @@ export const deleteContactThunk = createAsyncThunk(
     try {
       const { data } = await instance.delete(`contacts/${id}`);
       return data.id;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const updateContactThunk = createAsyncThunk(
+  'updateContact',
+  async (data, thunkAPI) => {
+    const newData = { name: data.name, number: data.number };
+    try {
+      const res = await instance.patch(`contacts/${data.id}`, newData);
+      return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }

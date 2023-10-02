@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import {
   StyledBtn,
+  StyledBtnEdit,
   StyledLi,
   StyledList,
   StyledText,
@@ -16,8 +17,12 @@ import {
   deleteContactThunk,
   getContactsThunk,
 } from 'redux/contacts/operations';
+import useModal from 'components/hooks/useModal';
+import { Modal } from 'components/Modal/Modal';
+import { Pencil, Trash2 } from 'lucide-react';
 
 export const ContactList = () => {
+  const { isOpen, close, open, content } = useModal();
   const contacts = useSelector(selectContacts);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
@@ -46,11 +51,17 @@ export const ContactList = () => {
           <StyledText>
             {contact.name}: {contact.number}
           </StyledText>
-          <StyledBtn onClick={() => dispatch(deleteContactThunk(contact.id))}>
-            Delete
-          </StyledBtn>
+          <div>
+            <StyledBtnEdit onClick={() => open(contact)}>
+              <Pencil />
+            </StyledBtnEdit>
+            <StyledBtn onClick={() => dispatch(deleteContactThunk(contact.id))}>
+              <Trash2 />
+            </StyledBtn>
+          </div>
         </StyledLi>
       ))}
+      {isOpen && <Modal close={close} contact={content} />}
     </StyledList>
   );
 };

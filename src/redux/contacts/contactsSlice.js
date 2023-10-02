@@ -3,6 +3,7 @@ import {
   addContactThunk,
   deleteContactThunk,
   getContactsThunk,
+  updateContactThunk,
 } from './operations';
 
 const initialState = {
@@ -32,6 +33,11 @@ export const contactsSlice = createSlice({
       .addCase(deleteContactThunk.fulfilled, (state, { payload }) => {
         state.contacts.items = state.contacts.items.filter(
           item => item.id !== payload
+        );
+      })
+      .addCase(updateContactThunk.fulfilled, (state, { payload }) => {
+        state.contacts.items = state.contacts.items.map(item =>
+          item.id === payload.id ? payload : item
         );
       })
       .addMatcher(
