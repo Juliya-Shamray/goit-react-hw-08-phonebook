@@ -1,6 +1,3 @@
-//   "name": "Adrian Cross",
-//   "email": "across@mail.com",
-//   "password": "examplepwd12345"
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
@@ -20,7 +17,8 @@ export const LoginForm = () => {
       .then(res => {
         toast.success(`Welcome, ${res.user.name}!!!`);
         navigate(location.state?.from ?? '/');
-      });
+      })
+      .catch('Data is not valid');
   };
   if (isLogin) return <Navigate to="/contacts" />;
   return (

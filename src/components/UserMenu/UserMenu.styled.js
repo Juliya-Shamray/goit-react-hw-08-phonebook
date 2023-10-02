@@ -8,6 +8,7 @@ export const StyledWrapper = styled.div`
     color: #c4dfe6;
   }
   button {
+    cursor: pointer;
     text-transform: uppercase;
     border-radius: 5px;
     padding: 5px 15px;

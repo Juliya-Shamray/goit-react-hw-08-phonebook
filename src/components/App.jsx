@@ -9,6 +9,7 @@ import { selectIsRefresh } from 'redux/auth/selectors';
 import { useEffect } from 'react';
 import { refreshThunk } from 'redux/auth/operations';
 import { PrivateRoutes } from './PrivateRoutes/PrivateRoutes';
+import { PageNotFound } from 'pages/PageNotFound';
 
 export const App = () => {
   const isRefresh = useSelector(selectIsRefresh);
@@ -32,7 +33,7 @@ export const App = () => {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Route>
-      <Route path="*" element={<LoginPage />} />
+      <Route path="*" element={<PageNotFound />} />
     </Routes>
   ) : (
     <h2>Loading...</h2>
