@@ -27,19 +27,6 @@ export const BurgerMenu = () => {
       <Menu $isOpen={isOpenBurger}>
         <X onClick={toggleMenu} />
         <nav>
-          <ul>
-            <li>
-              <MenuItem to="/" onClick={toggleMenu}>
-                Home
-              </MenuItem>
-            </li>
-
-            <li>
-              <MenuItem to="/contacts" onClick={toggleMenu}>
-                Contacts
-              </MenuItem>
-            </li>
-          </ul>
           {isLogin ? (
             <UserMenu />
           ) : (
@@ -56,6 +43,19 @@ export const BurgerMenu = () => {
               </li>
             </ul>
           )}
+          <ul>
+            <li>
+              <MenuItem to="/" onClick={toggleMenu}>
+                Home
+              </MenuItem>
+            </li>
+
+            <li>
+              <MenuItem to="/contacts" onClick={toggleMenu}>
+                Contacts
+              </MenuItem>
+            </li>
+          </ul>
         </nav>
       </Menu>
     </BurgerMenuWrapper>

@@ -10,7 +10,7 @@ export const BurgerMenuWrapper = styled.div`
   nav {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 50px;
     margin-top: 50px;
     ul {
       flex-direction: column;
