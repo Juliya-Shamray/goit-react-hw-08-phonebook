@@ -18,8 +18,10 @@ export const StyledWrapper = styled.div`
   }
   h1 {
     margin-bottom: 15px;
+    font-size: 24px;
     @media screen and (min-width: 768px) {
       margin-bottom: 25px;
+      font-size: 28px;
     }
     @media screen and (min-width: 1158px) {
       margin-bottom: 50px;
@@ -66,4 +68,9 @@ export const StyledImg = styled.img`
   @media screen and (min-width: 1158px) {
     max-width: 540px;
   }
+`;
+
+export const StyledImgWrap = styled.div`
+  display: flex;
+  justify-content: center;
 `;

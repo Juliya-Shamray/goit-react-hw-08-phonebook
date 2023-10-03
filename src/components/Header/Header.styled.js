@@ -5,9 +5,13 @@ export const StyledHeader = styled.header`
   padding: 15px 0;
   font-size: 18px;
   nav {
-    display: flex;
-    justify-content: space-between;
+    display: none;
+    @media screen and (min-width: 768px) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
+
   ul {
     display: flex;
     list-style: none;

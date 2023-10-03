@@ -2,8 +2,17 @@ import styled from 'styled-components';
 
 export const StyledWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 10px;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+  }
+
   p {
     color: #c4dfe6;
   }

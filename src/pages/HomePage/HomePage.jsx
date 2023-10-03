@@ -1,14 +1,19 @@
-import { StyledImg, StyledLink, StyledWrapper } from './HomePage.styled';
+import {
+  StyledImg,
+  StyledImgWrap,
+  StyledLink,
+  StyledWrapper,
+} from './HomePage.styled';
 
 export const HomePage = () => {
   return (
     <StyledWrapper>
-      <div>
+      <StyledImgWrap>
         <StyledImg
           src="https://st2.depositphotos.com/1023771/5391/i/600/depositphotos_53911431-stock-photo-social-network-concept-modern-smart.jpg"
           alt="phone and contacts"
         />
-      </div>
+      </StyledImgWrap>
       <div>
         <h1>Experience Contact Management at Its Best</h1>
         <p>

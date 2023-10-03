@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { UserMenu } from '../UserMenu/UserMenu';
 import { StyledHeader, StyledLink } from './Header.styled';
 import { selectIsLogin } from 'redux/auth/selectors';
+import { BurgerMenu } from 'components/BurgerMenu/BurgerMenu';
 export const Header = () => {
   const isLogin = useSelector(selectIsLogin);
 
@@ -31,6 +32,7 @@ export const Header = () => {
             </ul>
           )}
         </nav>
+        <BurgerMenu />
       </div>
     </StyledHeader>
   );
